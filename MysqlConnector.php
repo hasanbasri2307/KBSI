@@ -88,5 +88,9 @@ class MysqlConnector {
 $koneksiMysql = new MysqlConnector("192.168.105.11","hasan","basri","pgn_network");
 $insert = $koneksiMysql->insertData(['v_name'=>'PT Maju Mundur','phone'=>'123123','fax'=>'12312312','address'=>'jakarta barat','created_at'=>'2015-02-02 19:00:00','updated_at'=>'2015-02-02 19:00:00'],"vendor");
 var_dump($insert);
-$data = $koneksiMysql->updateData(['v_name'=>'PT Maju Mundur','phone'=>'123123','fax'=>'12312312','address'=>'jakarta barat','created_at'=>'2015-02-02 19:00:00','updated_at'=>'2015-02-02 19:00:00'],'vendor','id',3);
-var_dump($data);
+$update = $koneksiMysql->updateData(['v_name'=>'PT Maju Mundur','phone'=>'123123','fax'=>'12312312','address'=>'jakarta barat','created_at'=>'2015-02-02 19:00:00','updated_at'=>'2015-02-02 19:00:00'],'vendor','id',3);
+var_dump($update);
+$delete = $koneksiMysql->deleteData("vendor","id",3);
+var_dump($delete);
+$select = $koneksiMysql->getData("vendor");
+var_dump($select);
