@@ -1,0 +1,8 @@
+soal crud : 
+
+sebuah perusahaan A memiliki kendala dalam mengoleksi buku. Perushaan masih menggunakan prosedur manual dalam me manage buku nya.
+setiap buku memiliki informasi yg mendetail seperti judul, tahun terbit dsb. Setiap pegawai perushaan A boleh menginput banyak buku.
+Dan setiap buku yg diinput harus memiliki informasi siapa karyawan yg menginput buku tersebut.
+Pegawai perushaan memiliki informasi NIK,nama email.
+
+tolong buatkan sistem supaya case diatas dapat teratasi.
