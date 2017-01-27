@@ -24,29 +24,9 @@ class Connection {
 		return $this->conn;
 	}
 
-
-
-}
-
-$connect = new Connection('127.0.0.1','perusahaan','root','');
-$connect->connectDatabase();
-var_dump($connect);
-
-
-/**
-* Class Book
-*/
-class Book {
-	
-	public $connection;
-
-	public function __construct() {
-		$this->connection = Connection::connectDatabase();
-	}
-
 	public function listBook($table) {
 		$book  = "select * from $table";
-		$query = $this->connection->query($book) or die('unable connect to table book');
+		$query = $this->conn->query($book) or die('unable connect to table book');
 		while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 			$data[] = $row;
 		}
@@ -55,4 +35,5 @@ class Book {
 
 }
 
- ?>
+$connect = new Connection('127.0.0.1','perusahaan','root','');
+$connect->connectDatabase();
