@@ -50,12 +50,15 @@ class Book extends Connection {
 /**
 * Class Employee
 */
-class Employee extends Connection
-{
+class Employee extends Connection {
 	
 	public function getConnect($pdo) {
 		return $pdo;
 	}
+
+	/*
+	start Function list, insert, update, and delete
+	*/
 
 	public function listEmployee($table) {
 		$query = $this->conn->query("select * from $table") or die('query error');
@@ -69,3 +72,7 @@ class Employee extends Connection
 		# code...
 	}
 }
+
+/*
+ End code
+*/
