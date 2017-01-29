@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+</head>
+<style type="text/css">
+	#menu li ul {
+	  		display:none;
+			position:absolute;
+		}
+		#menu li:hover > ul {
+	  		display:block;
+		}
+		#menu ul{
+			margin:0;
+			padding:0;
+			line-height:35px;
+		}
+		#menu li{
+			float:left;
+			list-style:none;
+			position:relative;
+			text-align:center;
+			width:170px;
+			background-color:#008b99;
+		}
+		
+		#menu li ul ul {
+			  left:100%;
+			  top:0px;
+		}
+		#menu li li{
+			float:none;
+			background-color:#008b99;
+		}
+		#menu li li li{
+			background-color:#008b99;
+		}
+		#menu li li li li{
+			background-color:#008b99;	
+		}
+		#menu li a{
+			color:#ffffff;	
+			text-decoration:none;
+			text-align:center;
+			display:block;
+		}
+		#menu li a:hover{
+			background-color:#555;
+			text-decoration:none;
+			color:#FFFF00;
+		}
+</style>
+<h2 align="center">Home Page Application Company Book</h2><hr>
+<body>
+	<div id="menu">
+			<ul style="padding-left: 410px;">
+				<li><a href="">HOME</a></li>
+				<li><a href="#">LIST DATA</a>
+					<ul>
+						<li><a href="book.php">Book</a></li>
+						<li><a href="employee.php">Employee</a></li>
+					</ul>
+				</li>
+				<li><a href="#">ADD DATA</a>
+					<ul>
+						<li><a href="#">Book</a></li>
+						<li><a href="#">Employee</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+</body>
+</html>

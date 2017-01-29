@@ -3,37 +3,67 @@
 /**
 * Class Connection
 */
-class Connection {
+abstract class Connection {
 	
-	private $host;
-	private $database;
-	private $username;
-	private $password;
-	private $conn;
-
-
 	public function __construct($host, $database, $username, $password) {
 		$this->host = $host;
 		$this->database = $database;
 		$this->username = $username;
 		$this->password = $password;
-		$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->database, $this->username, $this->password);
+		$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->database, $this->username, $this->password);;
 	}
 
-	public function connectDatabase() {
-		return $this->conn;
+	abstract public function getConnect($connect);
+
+}
+
+/*===========================================================*/
+
+/**
+* Class Book
+*/
+class Book extends Connection {
+
+	public function getConnect($pdo) {
+		return $pdo;
 	}
+
+	/*
+	start Function list, insert, update, and delete
+	*/
 
 	public function listBook($table) {
-		$book  = "select * from $table";
-		$query = $this->conn->query($book) or die('unable connect to table book');
+		$query = $this->conn->query("select * from $table") or die('query error');
 		while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 			$data[] = $row;
 		}
 		return $data;
 	}
 
+	public function getIdBook($id, $table) {
+		# code...
+	}
 }
 
-$connect = new Connection('127.0.0.1','perusahaan','root','');
-$connect->connectDatabase();
+/**
+* Class Employee
+*/
+class Employee extends Connection
+{
+	
+	public function getConnect($pdo) {
+		return $pdo;
+	}
+
+	public function listEmployee($table) {
+		$query = $this->conn->query("select * from $table") or die('query error');
+		while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+			$data[] = $row;
+		}
+		return $data;
+	}
+
+	public function getIdEmployee($id, $table){
+		# code...
+	}
+}
