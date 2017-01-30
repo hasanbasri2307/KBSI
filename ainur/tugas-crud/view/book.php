@@ -51,13 +51,13 @@
 							
 							$number++;
 						}
-					} else {
-						echo '<tr><td colspan="6">No data available in table</td></tr>';
-					}
+					} 
 					?>
 
 				
 			</tbody>
 		</table>
+
 </body>
+<h3 align="center"><a href="../view/homepage.html">Back to home</a></h3>
 </html>
